@@ -1,8 +1,4 @@
 <?php
-/*301Empleado.php: Crea una clase Empleado con su nombre, apellidos y sueldo. Encapsula las propiedades mediante getters/setters y añade métodos parara:
-Obtener su nombre completo → getNombreCompleto(): string
-Que devuelva un booleano indicando si debe o no pagar impuestos (se pagan cuando el sueldo es superior a 3333€) → debePagarImpuestos(): bool */
- 
 class Empleado {
     private string $nombre;
     private string $apellidos;
@@ -48,22 +44,27 @@ class Empleado {
     public function debePagarImpuestos(): bool {
         return $this->sueldo > 3333;
     }
-}
-// 301EmpleadoConTelefonos.php: Crea una clase EmpleadoConTelefonos que herede de Empleado y añada la posibilidad de gestionar una lista de teléfonos (array).
-class EmpleadoConTelefonos extends Empleado {
-    private array $telefonos = [];
 
-    public function anyadirTelefono(int $telefono): void {
-        $this->telefonos[] = $telefono;
-    }
-
-    public function listarTelefonos(): string {
-        return implode(', ', $this->telefonos);
-    }
-
-    public function vaciarTelefonos(): void {
-        $this->telefonos = [];
+    // Método mágico __toString
+    public function __toString(): string {
+        $info = "Nombre completo: " . $this->getNombreCompleto() . "\n";
+        $info .= "Sueldo: " . $this->sueldo . "€\n";
+        $info .= $this->debePagarImpuestos() ? "Debe pagar impuestos" : "No debe pagar impuestos";
+        $info .= "\n-------------------------\n";
+        return $info;
     }
 }
 
+// Crear empleados
+$empleado1 = new Empleado("Juan", "Pérez", 4000);
+$empleado2 = new Empleado("Lucía", "Gómez", 3200);
+$empleado3 = new Empleado("Carlos", "Ruiz", 5000);
+
+// Modificar alguno si quieres
+$empleado1->setNombre("Pedro");
+
+// Mostrar con echo directamente
+echo $empleado1 . "\n"; ;
+echo $empleado2 . "\n"; ;
+echo $empleado3 . "\n"; ;
 ?>
