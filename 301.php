@@ -1,8 +1,8 @@
 <?php
 class Empleado {
-    private string $nombre;
-    private string $apellidos;
-    private float $sueldo;
+    private $nombre;
+    private $apellidos;
+    private $sueldo;
 
     public function __construct(string $nombre, string $apellidos, float $sueldo) {
         $this->nombre = $nombre;

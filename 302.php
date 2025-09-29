@@ -6,12 +6,21 @@ class EmpleadoConTelefonos extends Empleado {
     private array $telefonos = [];
 
     public function anyadirTelefono(int $telefono): void {
+        // array-push($telefono, $telefonos); otra manera de hacer push
         $this->telefonos[] = $telefono;
     }
 
+    public function getTelefonos(): array {
+    return $this->telefonos;
+}
+
+
     public function listarTelefonos(): string {
-        return implode(', ', $this->telefonos);
+    if (empty($this->telefonos)) {
+        return "Sin teléfonos";
     }
+    return implode(', ', $this->telefonos);
+}
 
     public function vaciarTelefonos(): void {
         $this->telefonos = [];
