@@ -76,7 +76,7 @@ class EmpleadoConTelefonos extends Empleado {
     }
     
 
-    public static function toHtml(EmpleadoConTelefonos $emp): string {
+    public static function toHtml(Empleado $emp): string {
     // Párrafo con nombre, apellido y sueldos
     $sueldos = $emp->getSueldo();
     if (is_array($sueldos)) {
