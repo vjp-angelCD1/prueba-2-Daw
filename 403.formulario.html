@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario de usuario</title>
+</head>
+<body>
+    <h2>Formulario de usuario</h2>
+    <form action="403.validacion.php" method="post">
+    
+        <label>Nombre y apellidos:</label><br>
+        <input type="text" name="nombre" required><br><br>
+
+        
+        <label>Email:</label><br>
+        <input type="email" name="email" required><br><br>
+
+        
+        <label>URL página personal:</label><br>
+        <input type="url" name="url" required><br><br>
+
+     
+        <label>Sexo:</label><br>
+        <input type="radio" name="sexo" value="Masculino" required> Masculino<br>
+        <input type="radio" name="sexo" value="Femenino"> Femenino<br>
+        <input type="radio" name="sexo" value="Otro"> Otro<br><br>
+
+     
+        <label>Número de convivientes:</label><br>
+        <input type="number" name="convivientes" min="0" required><br><br>
+
+       
+        <label>Aficiones:</label><br>
+        <input type="checkbox" name="aficiones[]" value="Deporte"> Deporte<br>
+        <input type="checkbox" name="aficiones[]" value="Música"> Música<br>
+        <input type="checkbox" name="aficiones[]" value="Lectura"> Lectura<br>
+        <input type="checkbox" name="aficiones[]" value="Viajar"> Viajar<br><br>
+
+       
+        <label>Menú favorito:</label><br>
+        <select name="menu[]" multiple size="4" required>
+            <option value="Pizza">Pizza</option>
+            <option value="Sushi">Sushi</option>
+            <option value="Hamburguesa">Hamburguesa</option>
+            <option value="Ensalada">Ensalada</option>
+        </select><br><br>
+
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+</html>

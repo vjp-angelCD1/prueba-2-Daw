@@ -3,7 +3,7 @@ echo "<h2>Contenido completo de \$_SERVER:</h2>";
 echo "<pre>";
 print_r($_SERVER);
 echo "</pre>";
-
+echo "---------";
 echo "<hr>";
 
 echo "<h2>Parámetros recibidos por GET:</h2>";
